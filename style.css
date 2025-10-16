@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+body {
+    background-color:rgb(204, 170, 119);
+}
+
+h1 {
+    font-family:"Fredericka the Great";
+    color:rgb(255, 196, 0);
+}
+
+.card {
+    background-color:brown;
+
+}
+
+input[type="text"] {
+    background-color: rgb(255, 234, 166);
+}
+
