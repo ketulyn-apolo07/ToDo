@@ -19,7 +19,7 @@
              cada linha ocupa a tela inteira -->
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center pt-5">Minha Lista de Coisas</h1>
+                <h1 class="text-center pt-5" titulo>Minha Lista de Coisas</h1>
             <div>
         </div>
         <div class="row">
@@ -44,5 +44,25 @@
             </div>
         </div>
     </div> <!-- ,container -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir tarefa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        Deseja excluir sua tarefa?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" onclick="excluirTarefa()">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

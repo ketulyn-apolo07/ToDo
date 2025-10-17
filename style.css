@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 body {
-    background-color:rgb(204, 170, 119);
+    background-color:rgb(203, 170, 120);
 }
 
-h1 {
+ h1.titulo {
     font-family:"Fredericka the Great";
     color:rgb(255, 196, 0);
 }
@@ -15,5 +15,28 @@ h1 {
 
 input[type="text"] {
     background-color: rgb(255, 234, 166);
+    border: 1px solid rgb(204, 149, 68);
 }
 
+input[type="text"]::placeholder {
+    color:rgb(165, 99, 42);
+}
+input[type="text"]:focus {
+    background-color:rgb(255, 234, 166) ;
+    color: rgb(131, 46, 46);
+    border-color:rgb(250, 231, 22);
+    box-shadow:0 1px 1px rgb(247, 138, 5) inset,0 0 8px rgb(120, 26, 26);
+    outline: 0 none;
+}
+
+.list-group-item {
+    color: green;
+    background-color:rgb(193, 188, 101);
+    border: 1px solid green;
+}
+.btn-concluir {
+    background-color: rgb(193, 188, 101);
+}
+.btn-excluir {
+    background-color: rgb(193, 188, 101);
+}

@@ -11,6 +11,9 @@ const lista_tarefas = document.querySelector("#lista-tarefas");
 
 const audioConcluir = new Audio('sound/gmae.wav');
 
+const modalExcluir = new bootstrap.modal(document.getElementById('exempleModal'));
+let id_tarefa_excluir;
+
 //---------------------------------------------------------------------------------------------------
 //2. FUNÇÃO DE LOGICA
 //---------------------------------------------------------------------------------------------------
@@ -26,8 +29,8 @@ function adicionarTarefa() {
     if (txt_nova_tarefa.value.trim() !== "") {
         const btn_item = `
             <div>
-                <button class="btn btn-outline-success btn-sm me-2" onclick="concluirTarefa(this)">Concluir</button>
-                <button class="btn btn-outline-danger btn-sm">Excluir</button>
+                <button class="btn btn-outline-success btn-sm me-2 btn-concluir" onclick="concluirTarefa(this)">Concluir</button>
+                <button class="btn btn-outline-danger btn-sm btn-excluir" onclick="obterIDTarefaExcluir(this);modalExcluir.show()">Excluir</button>
             </div>     
         `;
         
@@ -48,13 +51,29 @@ function adicionarTarefaEnter(evento) {
   }
 }
 
-function concluirTarefa(elemento) {
+function concluirTarefa(btn_concluir) {
     audioConcluir.play();
 
     for (let i = 0; i <= 40; i++){
         confetti();
     }
+
+    obterIDTarefaExcluir(btn_concluir);
+    ExcluirTarefa();
 }
+
+    function ExcluirTarefa() {
+        lista_tarefas.removeChild(lista_tarefas.children[id_tarefa_excluir]);
+        modalExcluir.hide();
+}
+
+function obterIDTarefaExcluir(btn) {
+    const item = btn.closest("li");
+    const tarefas = Array.from(lista_tarefas.children);
+    id_tarefa_excluir = tarefas.indexOf(item);
+}
+
+
 //---------------------------------------------------------------------------------------------------
 //3. ESCUTADORES DE EVENTOS E INICIO
 //---------------------------------------------------------------------------------------------------
