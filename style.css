@@ -40,3 +40,7 @@ input[type="text"]:focus {
 .btn-excluir {
     background-color: rgb(193, 188, 101);
 }
+.dragging {
+    opacity: 0.5;
+    background: #abcc80;
+}

@@ -32,6 +32,7 @@ function iniciaToDo() {
         adicionarTarefa(strTarefa);
         
     });
+    lista_tarefas.querySelectorAll("li").forEach(li => makeDraggable(li));
 }
 function adicionarTarefa(strTarefa) {
     if (typeof strTarefa !== 'string' || strTarefa == null) {
@@ -51,8 +52,17 @@ function adicionarTarefa(strTarefa) {
         item.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
         item.innerHTML = "<span class='w-75 text-truncate'>" + strTarefa +"</span>" + btn_item;
         
+        makeDraggable(item);
+        item.addEventListener("dragend", () => {
+            let arrayTarefas = [];
+            Array.from(lista_tarefas.children).forEach(i => {
+                arrayTarefas.push(i.querySelector("span").textContent);
+            });
+            salvarCookieTarefas(arrayTarefas);
+        });
+
         adicionarTarefaAoCookie(strTarefa);
-        
+
         lista_tarefas.append(item); 
     }
     txt_nova_tarefa.value ="";
